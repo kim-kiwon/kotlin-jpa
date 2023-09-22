@@ -14,10 +14,10 @@ class Member(
     @Column(name = "member_id")
     val id: Long = 0,
 
-    val name: String,
+    var name: String,
 
     @Embedded
-    val address: Address,
+    var address: Address? = null,
 
     @OneToMany(mappedBy = "member")
     val orders: MutableList<Order> = mutableListOf(),

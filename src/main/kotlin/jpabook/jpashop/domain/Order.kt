@@ -40,20 +40,20 @@ class Order(
     @Enumerated(EnumType.STRING)
     val status: OrderStatus, // 주문상태 [ORDER, CANCEL]
 ) {
-    // 양방향에서는 연관관계 편의 메서드가 있으면 좋다
-    // 반대쪽 엔티티에 설정을 까먹는다면 불일치 발생
-    fun setMember(member: Member) {
-        this.member = member
-        member.orders.add(this)
-    }
-
-    fun addOrderItem(orderItem: OrderItem) {
-        orderItems.add(orderItem)
-        orderItem.order = this
-    }
-
-    fun setDelivery(delivery: Delivery) {
-        this.delivery = delivery
-        delivery.order = this
-    }
+//    // 양방향에서는 연관관계 편의 메서드가 있으면 좋다
+//    // 반대쪽 엔티티에 설정을 까먹는다면 불일치 발생
+//    fun setMember(member: Member) {
+//        this.member = member
+//        member.orders.add(this)
+//    }
+//
+//    fun addOrderItem(orderItem: OrderItem) {
+//        orderItems.add(orderItem)
+//        orderItem.order = this
+//    }
+//
+//    fun setDelivery(delivery: Delivery) {
+//        this.delivery = delivery
+//        delivery.order = this
+//    }
 }
